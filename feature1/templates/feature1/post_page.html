@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_title %}
+POST_PAGE
+{% endblock %}
+
+{% block css_files %}
+<link rel="stylesheet" href="{% static 'feature1/post.css' %}">
+<link rel="stylesheet" href="{% static 'feature1/all-post.css' %}">
+{% endblock %}
+
+{% block content %}
+<section id="all-posts">
+    <h2> MY POSTS </h2>
+    <ul>
+                {% include "feature1/includes/post.html" %}
+                {% include "feature1/includes/post.html" %}
+                {% include "feature1/includes/post.html" %}
+                {% include "feature1/includes/post.html" %}
+                {% include "feature1/includes/post.html" %}
+                {% include "feature1/includes/post.html" %}
+
+
+
+
+
+    </ul>
+</section>
+{% endblock content %}

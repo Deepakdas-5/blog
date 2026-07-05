@@ -6,6 +6,7 @@ MY BLOG
 {% endblock %}
 
 {% block css_files %}
+<link rel="stylesheet" href="{% static 'feature1/post.css' %}">
 <link rel="stylesheet" href="{% static 'feature1/index.css' %}">
 {% endblock %}
 
@@ -13,16 +14,8 @@ MY BLOG
 
 <section id="welcome">
 
-    <header id="main_navigation">
-        <h1><a href="">MY BLOG</a></h1>
-
-        <nav>
-            <a href="">POSTS</a>
-        </nav>
-    </header>
-
     <header id="hero">
-        <img src="{% static 'feature1/images/deepak.jpg' %}" alt="Deepak - Author of the Blog">
+        <img src="{% static 'feature1/images/deepak.jpeg' %}" alt="Deepak - Author of the Blog">
 
         <h2>DEEPAK BLOG</h2>
     </header>
@@ -38,30 +31,7 @@ MY BLOG
     <h2>My Latest Thought</h2>
 
     <ul>
-        <li>
-
-            <article class="post">
-
-                <a href="">
-
-                    <img src="{% static 'feature1/images/mountain.jpg' %}" alt="Mountain Hiking">
-
-                    <div class="post_content">
-
-                        <h3>Mountain Hiking</h3>
-
-                        <p>
-                            These mountains are an epitome of grandeur and resilience,
-                            a living testament to the earth's might.
-                        </p>
-
-                    </div>
-
-                </a>
-
-            </article>
-
-        </li>
+        {% include "feature1/includes/post.html" %}
     </ul>
 
 </section>

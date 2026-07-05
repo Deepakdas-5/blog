@@ -5,7 +5,7 @@ def landing_page(request):
     return render(request,"feature1/index.html")
 
 def post_list(request):
-    pass
+    return render(request,"feature1/post_page.html")
 
 
 def post_description(request):

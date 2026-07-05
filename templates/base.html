@@ -9,6 +9,13 @@
     {% block css_files %}{% endblock css_files %}
 </head>
 <body>
+    <header id="main-navigation">
+        <h1><a href="{% url "welcome_page" %}">MY BLOG</a></h1>
+
+        <nav>
+            <a href="{% url "post_list_page" %}">POSTS</a>
+        </nav>
+    </header>
     {% block content %}
     {% endblock content %}
 </body>
