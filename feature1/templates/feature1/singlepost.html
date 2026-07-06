@@ -11,24 +11,14 @@ POST_PAGE
 
 {% block content %}
 <section id='summary'>
-    <h2>Post Title</h2>
+    <h2>{{post.title}}</h2>
     <article>
         <img src="{% static "feature1/images/mountains.jpg" %}" alt="post-title">
-        <address>DEEPAK BLOG </address>
-        <div> Last updated on <time>MAY 10th </time></div>
+        <address>{{post.author}} </address>
+        <div> Last updated on <time>{{post.date|date:"d M Y"}}</time></div>
     </article>
 </section>
 <main>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, adipisci sit distinctio officia maiores laborum veniam
-         iste possimus ab officiis consequuntur illum ratione. Perferendis, cupiditate aliquam quas quos dicta architecto?
-    </p>
-
-     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, adipisci sit distinctio officia maiores laborum veniam
-         iste possimus ab officiis consequuntur illum ratione. Perferendis, cupiditate aliquam quas quos dicta architecto?
-    </p>
-
-     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, adipisci sit distinctio officia maiores laborum veniam
-         iste possimus ab officiis consequuntur illum ratione. Perferendis, cupiditate aliquam quas quos dicta architecto?
-    </p>
+    {{post.content|linebreaks}}
 </main>
 {% endblock %}

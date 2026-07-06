@@ -14,17 +14,14 @@ POST_PAGE
 <section id="all-posts">
     <h2> MY POSTS </h2>
     <ul>
-                {% include "feature1/includes/post.html" %}
-                {% include "feature1/includes/post.html" %}
-                {% include "feature1/includes/post.html" %}
-                {% include "feature1/includes/post.html" %}
-                {% include "feature1/includes/post.html" %}
-                {% include "feature1/includes/post.html" %}
+               {% for post in posts   %}
+                       {% include "feature1/includes/post.html" %}
 
+               
+               
+                {% endfor %}
 
-
-
-
+                
     </ul>
 </section>
 {% endblock content %}

@@ -27,7 +27,7 @@ post=[
         "image":"woods.jpg",
         "author":"Deepak",
         "Date":date(2026,7,5),
-        "title":"Mountain_hiking",
+        "title":"in_to_the_wild",
         "excerpt":"These mountains are an epitome of grandeur and resilience,a living testament to the earth's might.",
         "content":"""Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, adipisci sit distinctio officia maiores laborum veniam
          iste possimus ab officiis consequuntur illum ratione. Perferendis, cupiditate aliquam quas quos dicta architecto?
@@ -46,7 +46,7 @@ post=[
         "image":"mountains.jpg",
         "author":"Deepak",
         "Date":date(2023,2,12),
-        "title":"Mountain_hiking",
+        "title":"Happiness is to be shared",
         "excerpt":"These mountains are an epitome of grandeur and resilience,a living testament to the earth's might.",
         "content":"""Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, adipisci sit distinctio officia maiores laborum veniam
          iste possimus ab officiis consequuntur illum ratione. Perferendis, cupiditate aliquam quas quos dicta architecto?
@@ -75,8 +75,13 @@ def landing_page(request):
     })
 
 def post_list(request):
-    return render(request,"feature1/post_page.html")
+    return render(request,"feature1/post_page.html",{
+        "posts":post
+    })
 
 
 def post_description(request,slug):
-    return render(request,"feature1/singlepost.html")
+    identified_post= next(post for post in post if post['slug']==slug)
+    return render(request,"feature1/singlepost.html",{
+        'post':identified_post
+    })
