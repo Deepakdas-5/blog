@@ -31,7 +31,10 @@ MY BLOG
     <h2>My Latest Thought</h2>
 
     <ul>
-        {% include "feature1/includes/post.html" %}
+        {% for post  in post %}
+                {% include "feature1/includes/post.html" %}
+
+        {% endfor %}
     </ul>
 
 </section>

@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_title %}
+POST_PAGE
+{% endblock %}
+
+{% block css_files %}
+<link rel="stylesheet" href="{% static 'feature1/post-detail.css' %}">
+{% endblock %}
+
+{% block content %}
+<section id='summary'>
+    <h2>Post Title</h2>
+    <article>
+        <img src="{% static "feature1/images/mountains.jpg" %}" alt="post-title">
+        <address>DEEPAK BLOG </address>
+        <div> Last updated on <time>MAY 10th </time></div>
+    </article>
+</section>
+<main>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, adipisci sit distinctio officia maiores laborum veniam
+         iste possimus ab officiis consequuntur illum ratione. Perferendis, cupiditate aliquam quas quos dicta architecto?
+    </p>
+
+     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, adipisci sit distinctio officia maiores laborum veniam
+         iste possimus ab officiis consequuntur illum ratione. Perferendis, cupiditate aliquam quas quos dicta architecto?
+    </p>
+
+     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, adipisci sit distinctio officia maiores laborum veniam
+         iste possimus ab officiis consequuntur illum ratione. Perferendis, cupiditate aliquam quas quos dicta architecto?
+    </p>
+</main>
+{% endblock %}

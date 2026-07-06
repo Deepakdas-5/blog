@@ -3,14 +3,12 @@
  <li>
             <article class="post">
 
-                <a href="">
-                    <img src="{% static 'feature1/images/mountains.jpg' %}" alt="Mountain Hiking">
+                <a href="{% url "post_description_page" post.slug %}">
+                    <img src="{% static 'feature1/images/'|add:post.image %}" alt="Mountain Hiking">
                     <div class="post_content">
-                        <h3>Mountain Hiking</h3>
+                        <h3>{{post.title}}</h3>
                         <p>
-                            These mountains are an epitome of grandeur and resilience,
-                            a living testament to the earth's might.
-                        </p>
+                            {{post.excerpt}}   </p>
                     </div>
                 </a>
             </article>
