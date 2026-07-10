@@ -5,19 +5,19 @@ pipeline {
 
         stage('Clone') {
             steps {
-                echo 'Cloning the repository...'
+                checkout scm
             }
         }
 
-        stage('Build') {
+        stage('Build Docker Image') {
             steps {
-                echo 'Building Docker Image...'
+                sh 'docker build -t blog:v1 .'
             }
         }
 
-        stage('Deploy') {
+        stage('Run Container') {
             steps {
-                echo 'Deploying Application...'
+                sh 'docker run -d --name blog-container -p 8000:8000 blog:v1'
             }
         }
 
