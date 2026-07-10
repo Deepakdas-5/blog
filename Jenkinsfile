@@ -17,7 +17,9 @@ pipeline {
 
         stage('Run Container') {
             steps {
-                sh 'docker run -d --name blog-container -p 8000:8000 blog:v1'
+                sh ''' docker stop blog-container || true
+                       docker rm blog-container || true
+                       docker run -d --name blog-container -p 8000:8000 blog:v1'''
             }
         }
 
